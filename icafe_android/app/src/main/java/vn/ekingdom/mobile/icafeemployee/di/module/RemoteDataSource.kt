@@ -57,7 +57,6 @@ val retrofitModule = module {
 
 val apiModule = module {
 //    single { createWebService<PostApi>(get()) }
-//    single { createWebService<WeatherDatasource>(get()) }
 }
 
 inline fun <reified T> createWebService(retrofit: Retrofit): T {

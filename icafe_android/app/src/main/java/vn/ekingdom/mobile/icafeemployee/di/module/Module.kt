@@ -10,14 +10,8 @@ val appData = module {
 }
 
 val viewModelModule = module {
-    //    viewModel {
-//        PostListViewModel(get())
-//    }
 //    viewModel {
 //        DemoViewModel(get())
-//    }
-//    viewModel {
-//        DashBoardViewModel()
 //    }
 }
 
