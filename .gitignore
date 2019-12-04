@@ -1,0 +1,5 @@
+icafe_android/.idea
+icafe_android/app/src/androidTest
+icafe_android/ekcommon/src/androidTest
+icafe_android/ekcommon/src/test
+icafe_android/gradle

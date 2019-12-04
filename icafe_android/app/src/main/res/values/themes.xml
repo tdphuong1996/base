@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Button.Primary"
+        parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">?attr/buttonNormalColor</item>
+        <item name="colorControlHighlight">
+            ?attr/buttonHighlightColor
+        </item>
+        <item name="android:textColor">?attr/buttonTextColor</item>
+    </style>
+
+    <style name="Widget.Toolbar" parent="ToolBarStyle">
+        <item name="android:background">?attr/toolbarBackgroundColor</item>
+    </style>
+
+    <!--<editor-fold desc="Toolbar style">-->
+    <style name="ToolBarStyle" parent="ToolBarStyle.Base"/>
+
+    <style name="ToolBarStyle.Base" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="ToolBarStyle.Event" parent="ToolBarStyle">
+        <item name="titleTextAppearance">@style/TextAppearance.Widget.Event.Toolbar.Title</item>
+    </style>
+
+    <style name="TextAppearance.Widget.Event.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!--Any text styling can be done here-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@style/TextAppearance.AppCompat.Widget.ActionBar.Title</item>
+    </style>
+    <!--</editor-fold>-->
+
+    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <!--        <item name="layout">@layout/toolbar_search_view</item>-->
+        <!--        <item name="commitIcon">@drawable/ic_search_commit</item>-->
+        <!--        <item name="colorControlNormal">@color/material_light_active_icon</item>-->
+        <!--        <item name="colorControlHighlight">@color/material_ripple_light</item>-->
+        <!--        <item name="autoCompleteTextViewStyle">@style/AutoCompleteTextViewStyle</item>-->
+        <!--        <item name="suggestionRowLayout">@layout/search_view_suggestion_row</item>-->
+        <item name="android:maxWidth">9999dp</item>
+    </style>
+
+    <style name="AutoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <!--        <item name="android:popupBackground">@drawable/search_suggestions_bg</item>-->
+        <item name="android:popupElevation">0dp</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="searchViewStyle">@style/SearchViewTheme</item>
+    </style>
+</resources>

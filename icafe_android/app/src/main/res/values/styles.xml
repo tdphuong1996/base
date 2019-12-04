@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="primaryButtonTheme">@style/Widget.Button.Primary</item>
+        <item name="toolbarTheme">@style/Widget.Toolbar</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="LightTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/lightColorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/lightColorAccent</item>
+        <item name="primaryTextColor">@color/lightPrimaryText</item>
+        <item name="buttonNormalColor">@color/buttonNormal</item>
+        <item name="buttonHighlightColor">@color/buttonHighlight</item>
+        <item name="buttonTextColor">@color/buttonText</item>
+        <item name="toolbarBackgroundColor">@color/lightColorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="MintTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/mintColorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/mintColorAccent</item>
+        <item name="primaryTextColor">@color/mintPrimaryText</item>
+        <item name="buttonNormalColor">@color/mintButtonNormal</item>
+        <item name="buttonHighlightColor">@color/mintButtonHighlight</item>
+        <item name="buttonTextColor">@color/mintButtonText</item>
+        <item name="toolbarBackgroundColor">@color/mintColorPrimary</item>
+    </style>
+
+
+</resources>
