@@ -70,6 +70,5 @@ dependencies {
 
     //Dex install
     implementation 'androidx.multidex:multidex:2.0.1'
-
-    implementation project(path: ':ekcommon')
+    api project(path: ':ekcommon')
 }
