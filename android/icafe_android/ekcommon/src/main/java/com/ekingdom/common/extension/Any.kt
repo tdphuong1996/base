@@ -20,3 +20,6 @@ inline fun Any.getSessionID(): String {
     for (i in 0 until len) sb.append(AB[rnd.nextInt(AB.length)])
     return sb.toString()
 }
+
+
+//Khieu ne
