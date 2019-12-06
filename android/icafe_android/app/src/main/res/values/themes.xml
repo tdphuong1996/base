@@ -32,22 +32,56 @@
     </style>
     <!--</editor-fold>-->
 
-    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView.ActionBar">
-        <!--        <item name="layout">@layout/toolbar_search_view</item>-->
-        <!--        <item name="commitIcon">@drawable/ic_search_commit</item>-->
-        <!--        <item name="colorControlNormal">@color/material_light_active_icon</item>-->
-        <!--        <item name="colorControlHighlight">@color/material_ripple_light</item>-->
-        <!--        <item name="autoCompleteTextViewStyle">@style/AutoCompleteTextViewStyle</item>-->
-        <!--        <item name="suggestionRowLayout">@layout/search_view_suggestion_row</item>-->
-        <item name="android:maxWidth">9999dp</item>
+
+    <!--<editor-fold desc="Text view style">-->
+    <style name="Widget.TextView.Parent" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">#fff</item>
     </style>
 
-    <style name="AutoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
-        <!--        <item name="android:popupBackground">@drawable/search_suggestions_bg</item>-->
-        <item name="android:popupElevation">0dp</item>
+    <style name="Widget.Title.TextView" parent="Widget.TextView.Parent">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:layout_marginStart">@dimen/dp6</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 
-    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="searchViewStyle">@style/SearchViewTheme</item>
+    <style name="Widget.TextView.Border.WapContent" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/lightColorPrimary</item>
+        <item name="android:background">@drawable/corner_primary</item>
+        <item name="android:paddingTop">@dimen/dp4</item>
+        <item name="android:paddingBottom">@dimen/dp4</item>
+        <item name="android:paddingStart">@dimen/dp12</item>
+        <item name="android:paddingEnd">@dimen/dp12</item>
     </style>
+    <!--</editor-fold>-->
+
+    <!--<editor-fold desc="Home recharge status style">-->
+    <style name="Widget.Title.TextView.Recharge" parent="Widget.TextView.Parent">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:layout_marginStart">@dimen/dp6</item>
+    </style>
+
+    <style name="Widget.TextView.Number.Large" parent="Widget.TextView.Parent">
+        <item name="android:layout_marginTop">@dimen/dp2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="Widget.TextView.Recharge.Status" parent="Widget.TextView.Parent">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:layout_marginTop">@dimen/dp2</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+    <!--</editor-fold>-->
+
+    <style name="Widget.TextView.Item.PC" parent="Widget.TextView.Parent">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:layout_marginStart">@dimen/dp6</item>
+        <item name="android:textColor">#000</item>
+    </style>
+
+
 </resources>

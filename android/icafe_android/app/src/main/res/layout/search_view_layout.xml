@@ -1,103 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/lightColorPrimary"
-    android:orientation="horizontal"
     >
 
-    <RelativeLayout
-        android:id="@+id/rllSearchClose"
+    <com.ekingdom.common.view.EKToolbar
+        android:id="@+id/ekToolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="?attr/actionBarSize"
+        app:baseActionItemIcon="@drawable/ic_icsearch"
+        app:showBaseActionItem="true"
+        android:visibility="visible"
+        />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgLeft"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="12dp"
-            app:srcCompat="@drawable/ic_icscanqr"
-            android:layout_centerVertical="true"
-            android:background="?attr/actionBarItemBackground"
-            android:clickable="true"
-            />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/imgLeft"
-            android:layout_toStartOf="@id/imgRight"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:text="App Title"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgRight"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="12dp"
-            android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/ic_icsearch"
-            android:background="?attr/actionBarItemBackground"
-            android:layout_centerVertical="true"
-            android:clickable="true"
-            />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rllSearchOpen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="?attr/actionBarSize"
         android:background="#fff"
-        android:visibility="gone"
+        android:visibility="invisible"
         >
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgBack"
+            android:id="@+id/imgBackSearch"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:clickable="true"
             app:srcCompat="@drawable/ic_back"
             android:tint="#000"
-            android:layout_centerVertical="true"
-            android:padding="16dp"
+            android:padding="12dp"
             android:background="?attr/actionBarItemBackground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edtSearch"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/imgBack"
-            android:layout_toStartOf="@id/imgClose"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:textColor="#000"
+            android:layout_toStartOf="@id/imgClose"
+            android:layout_toEndOf="@id/imgBackSearch"
             android:text="App Title"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            />
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgClose"
+            app:layout_constraintStart_toEndOf="@id/imgBackSearch"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgClose"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:padding="16dp"
+            android:padding="12dp"
             android:tint="#000"
             android:layout_alignParentEnd="true"
             app:srcCompat="@drawable/ic_iccleartext"
-            android:layout_centerVertical="true"
             android:background="?attr/actionBarItemBackground"
             android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
             />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardScreen"
+        android:icon="@drawable/ic_ictabdashboard"
+        android:title="@string/dashboard" />
+
+    <item
+        android:id="@+id/historyScreen"
+        android:icon="@drawable/ic_ictabhistory"
+        android:title="@string/history" />
+
+    <item
+        android:id="@+id/notificationScreen"
+        android:icon="@drawable/ic_ictabnotification"
+        android:title="@string/notification" />
+
+    <item
+        android:id="@+id/userScreen"
+        android:icon="@drawable/ic_ictabaccount"
+        android:title="@string/account" />
+
+</menu>

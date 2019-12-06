@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeScreen">
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="vn.ekingdom.mobile.icafeemployee.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/home"
+        >
+
+        <action
+            android:id="@+id/action_home_to_search"
+            app:destination="@id/searchScreen" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchScreen"
+        android:name="vn.ekingdom.mobile.icafeemployee.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search"
+        />
+<!--    <include app:graph="@navigation/nav_home" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/dashboardScreen"-->
+<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.dashboard.DashBoardFragment"-->
+<!--        android:label="@string/dashboard"-->
+<!--        tools:layout="@layout/fragment_dashboard"-->
+<!--        />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/historyScreen"-->
+<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.history.HistoryFragment"-->
+<!--        android:label="@string/history"-->
+<!--        tools:layout="@layout/fragment_history"-->
+<!--        />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/notificationScreen"-->
+<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.notification.NofiticationFragment"-->
+<!--        android:label="@string/notification"-->
+<!--        tools:layout="@layout/fragment_notification"-->
+<!--        />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/userScreen"-->
+<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.account.AccountFragment"-->
+<!--        android:label="@string/account"-->
+<!--        tools:layout="@layout/fragment_account"-->
+<!--        />-->
+
+
+</navigation>

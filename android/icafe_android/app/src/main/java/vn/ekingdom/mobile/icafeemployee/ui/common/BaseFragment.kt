@@ -22,11 +22,13 @@ import vn.ekingdom.mobile.icafeemployee.base.BaseViewModel
 import vn.ekingdom.mobile.icafeemployee.base.SharedReferenceHelper
 
 
-abstract class BaseFragment<VM : BaseViewModel>(layoutResID: Int) : Fragment(layoutResID){
+abstract class BaseFragment<VM : BaseViewModel>() : Fragment(){
+    protected abstract val layoutResID: Int
     protected abstract val viewModel: VM
     protected val navController: NavController
         get() = findNavController()
     val sharedReferenceHelper: SharedReferenceHelper by inject()
+    private var isInit = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,22 +36,23 @@ abstract class BaseFragment<VM : BaseViewModel>(layoutResID: Int) : Fragment(lay
         savedInstanceState: Bundle?
     ): View? {
         // create ContextThemeWrapper from the original Activity Context with the custom theme
-        // create ContextThemeWrapper from the original Activity Context with the custom theme
         val contextThemeWrapper: Context =
             ContextThemeWrapper(activity, getThemeID())
 
         // clone the inflater using the ContextThemeWrapper
-        // clone the inflater using the ContextThemeWrapper
         val localInflater = inflater.cloneInContext(contextThemeWrapper)
         init()
-        return super.onCreateView(localInflater, container, savedInstanceState)
+        return localInflater.inflate(layoutResID, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView(view)
-        bindEvent(view)
-        getData()
+//        if (!isInit) {
+            initView(view)
+            bindEvent(view)
+            getData()
+//        }
+//        isInit = true
     }
 
     abstract fun init()
@@ -78,12 +81,13 @@ abstract class BaseFragment<VM : BaseViewModel>(layoutResID: Int) : Fragment(lay
     }
 
     open fun getThemeID(): Int {
-        var theme = sharedReferenceHelper.getTheme()
-        return if (theme.equals(Theme.LIGHT.name, true)) {
-            R.style.LightTheme
-        } else {
-            R.style.MintTheme
-        }
+//        var theme = sharedReferenceHelper.getTheme()
+//        return if (theme.equals(Theme.LIGHT.name, true)) {
+//            R.style.LightTheme
+//        } else {
+//            R.style.MintTheme
+//        }
+        return R.style.LightTheme
     }
 
     abstract fun getData()

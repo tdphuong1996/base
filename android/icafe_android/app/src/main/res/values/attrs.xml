@@ -12,5 +12,9 @@
     <attr name="toolbarBackgroundColor" format="reference"/>
     <attr name="toolbarTheme" format="reference"/>
 
+<!--    Style cho title của cardview-->
+    <attr name="defaultTextTheme" format="reference"/>
+    <attr name="cardTitleTheme" format="reference"/>
+
 
 </resources>
