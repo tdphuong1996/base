@@ -19,7 +19,7 @@
         <item name="colorPrimary">@color/lightColorPrimary</item>
         <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="colorAccent">@color/lightColorAccent</item>
+        <item name="colorAccent">@color/lightColorPrimary</item>
         <item name="primaryTextColor">@color/lightPrimaryText</item>
         <item name="buttonNormalColor">@color/buttonNormal</item>
         <item name="buttonHighlightColor">@color/buttonHighlight</item>

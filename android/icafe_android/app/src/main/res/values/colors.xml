@@ -12,10 +12,19 @@
     <color name="buttonText">#FFFFFF</color>
 
     <color name="colorBackground">#E0E0E0</color>
-    <color name="colorLine">#AEAEAE</color>
+    <color name="colorLightGray">#AEAEAE</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="colorYellow">#ffdf5d</color>
 
 
-    <color name="colorWaitingNumber">#ffdf5d</color>
+    <color name="textHintColor">#80555555</color>
+    <color name="editTextBorderColor">#CCCCCC</color>
+
+    <!--<editor-fold desc="DashBoard screen">-->
+    <color name="colorWaitingNumber">@color/colorYellow</color>
     <color name="colorTitlePrimary">@color/lightColorPrimary</color>
+    <color name="colorCompleteOrder">@color/colorGreen</color>
+    <!--</editor-fold>-->
+
 
 </resources>

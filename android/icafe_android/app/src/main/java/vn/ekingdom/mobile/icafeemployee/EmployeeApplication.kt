@@ -7,8 +7,13 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import vn.ekingdom.mobile.icafeemployee.di.module.appModule
+import vn.ekingdom.mobile.icafeemployee.model.UserModel
 
 class EmployeeApplication : Application() {
+
+    companion object{
+        var userModel: UserModel? = null
+    }
 
     override fun onCreate() {
         super.onCreate()

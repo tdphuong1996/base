@@ -3,7 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/homeScreen">
+    app:startDestination="@id/launcherScreen">
+
+    <action
+        android:id="@+id/action_login"
+        app:destination="@id/loginScreen" />
+
+    <action
+        android:id="@+id/action_home"
+        app:destination="@id/homeScreen" />
+
+    <fragment
+        android:id="@+id/launcherScreen"
+        android:name="vn.ekingdom.mobile.icafeemployee.ui.launcher.LauncherFragment"
+        tools:layout="@layout/fragment_launcher"
+        android:label="@string/launcher"
+        />
+
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="vn.ekingdom.mobile.icafeemployee.ui.account.login.LoginFragment"
+        tools:layout="@layout/fragment_login"
+        android:label="@string/login"
+        >
+        <action
+            android:id="@+id/action_loginScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/action_login_to_forgot_pass"
+            app:destination="@id/nav_forgot_pass"
+            />
+
+    </fragment>
+
+    <include app:graph="@navigation/nav_forgot_pass"/>
 
     <fragment
         android:id="@+id/homeScreen"
@@ -24,34 +65,6 @@
         android:label="@string/search"
         tools:layout="@layout/fragment_search"
         />
-<!--    <include app:graph="@navigation/nav_home" />-->
-<!--    <fragment-->
-<!--        android:id="@+id/dashboardScreen"-->
-<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.dashboard.DashBoardFragment"-->
-<!--        android:label="@string/dashboard"-->
-<!--        tools:layout="@layout/fragment_dashboard"-->
-<!--        />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/historyScreen"-->
-<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.history.HistoryFragment"-->
-<!--        android:label="@string/history"-->
-<!--        tools:layout="@layout/fragment_history"-->
-<!--        />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/notificationScreen"-->
-<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.notification.NofiticationFragment"-->
-<!--        android:label="@string/notification"-->
-<!--        tools:layout="@layout/fragment_notification"-->
-<!--        />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/userScreen"-->
-<!--        android:name="vn.ekingdom.mobile.icafeemployee.ui.account.AccountFragment"-->
-<!--        android:label="@string/account"-->
-<!--        tools:layout="@layout/fragment_account"-->
-<!--        />-->
 
 
 </navigation>

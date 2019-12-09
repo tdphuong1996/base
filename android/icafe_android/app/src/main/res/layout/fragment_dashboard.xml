@@ -1,257 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
+    android:fillViewport="true"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clPaymentRequest"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="8dp"
-        android:elevation="1dp"
-        android:background="@drawable/gradient_blue"
-        android:clipToPadding="true"
-        app:layout_constraintEnd_toStartOf="@+id/clTotalMoney"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        >
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgRequest"
-            android:layout_width="@dimen/image_title_recharge_size"
-            android:layout_height="@dimen/image_title_recharge_size"
-            app:srcCompat="@drawable/ic_ictabhistory"
-            app:tint="#fff"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvRechargeRequest"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPaymentRequest"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/imgRequest"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgRequest"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/recharge_request"
-            style="@style/Widget.Title.TextView.Recharge"
-            />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:layout_marginEnd="4dp"
-            style="@style/Widget.TextView.Number.Large"
-            app:layout_constraintBottom_toBottomOf="@id/tvWaitingCount"
+            android:padding="8dp"
+            android:elevation="1dp"
+            android:background="@drawable/gradient_blue"
+            android:clipToPadding="true"
+            app:layout_constraintEnd_toStartOf="@+id/clTotalMoney"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgRequest"
+                android:layout_width="@dimen/image_title_recharge_size"
+                android:layout_height="@dimen/image_title_recharge_size"
+                app:srcCompat="@drawable/ic_ictabhistory"
+                app:tint="#fff"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRechargeRequest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/imgRequest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgRequest"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/recharge_request"
+                style="@style/Widget.Title.TextView.Recharge"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                style="@style/Widget.TextView.Number.Large"
+                app:layout_constraintBottom_toBottomOf="@id/tvWaitingCount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvWaitingCount"
+                app:layout_constraintTop_toTopOf="@id/tvWaitingCount"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintWidth_percent="0.5"
+                android:text="30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWaitingCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.TextView.Number.Large"
+                android:textColor="@color/colorWaitingNumber"
+                app:layout_constraintEnd_toStartOf="@+id/tvDone"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgRequest"
+                app:layout_constraintWidth_percent="0.5"
+                android:text="20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDoneTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/tvDone"
+                app:layout_constraintStart_toStartOf="@id/tvDone"
+                app:layout_constraintTop_toBottomOf="@id/tvDone"
+                style="@style/Widget.TextView.Recharge.Status"
+                android:text="Đã xử lý" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWaitingCountTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/tvWaitingCount"
+                app:layout_constraintStart_toStartOf="@id/tvWaitingCount"
+                app:layout_constraintTop_toBottomOf="@id/tvWaitingCount"
+                style="@style/Widget.TextView.Recharge.Status"
+                android:text="Đang chờ" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTotalMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_green"
+            android:clipToPadding="true"
+            android:layout_marginStart="4dp"
+            android:elevation="1dp"
+            android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvWaitingCount"
-            app:layout_constraintTop_toTopOf="@id/tvWaitingCount"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintWidth_percent="0.5"
-            android:text="30" />
+            app:layout_constraintStart_toEndOf="@+id/clPaymentRequest"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWaitingCount"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgTotalMoney"
+                android:layout_width="@dimen/image_title_recharge_size"
+                android:layout_height="@dimen/image_title_recharge_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icpopuppayment" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalMoneyTitle"
+                style="@style/Widget.Title.TextView.Recharge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/imgTotalMoney"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgTotalMoney"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/total_money" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalMoneyValue"
+                style="@style/Widget.TextView.Number.Large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgTotalMoney"
+                android:text="20,000,000 " />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMerchant"
+                style="@style/Widget.TextView.Recharge.Status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTotalMoneyValue"
+                android:text="Hoà Hưng - Ca Sáng" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clWorkStatus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            style="@style/Widget.TextView.Number.Large"
-            android:textColor="@color/colorWaitingNumber"
-            app:layout_constraintEnd_toStartOf="@+id/tvDone"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginTop="8dp"
+            android:elevation="1dp"
+            android:padding="8dp"
+            android:background="@drawable/myrect"
+            android:clipToPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/clPaymentRequest"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgRequest"
-            app:layout_constraintWidth_percent="0.5"
-            android:text="20" />
+            app:layout_constraintEnd_toEndOf="parent"
+            >
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDoneTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/tvDone"
-            app:layout_constraintStart_toStartOf="@id/tvDone"
-            app:layout_constraintTop_toBottomOf="@id/tvDone"
-            style="@style/Widget.TextView.Recharge.Status"
-            android:text="Đã xử lý" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWorkstation"
+                android:layout_width="@dimen/image_title_size"
+                android:layout_height="@dimen/image_title_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icstatuspc" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWaitingCountTitle"
-            android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotaWorkstation"
+                style="@style/Widget.Title.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTitlePrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/imgWorkstation"
+                app:layout_constraintStart_toEndOf="@id/imgWorkstation"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Máy trạm (15)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWatchAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_all"
+                style="@style/Widget.TextView.Border.WapContent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvWSStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imgWorkstation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                android:layout_marginTop="@dimen/dp12"
+                tools:itemCount="4"
+                tools:listitem="@layout/rcv_item_ws_status"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clWaiting"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/tvWaitingCount"
-            app:layout_constraintStart_toStartOf="@id/tvWaitingCount"
-            app:layout_constraintTop_toBottomOf="@id/tvWaitingCount"
-            style="@style/Widget.TextView.Recharge.Status"
-            android:text="Đang chờ" />
+            android:layout_marginTop="8dp"
+            android:elevation="1dp"
+            android:padding="8dp"
+            android:background="@drawable/myrect"
+            android:clipToPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/clWorkStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWaiting"
+                android:layout_width="@dimen/image_title_size"
+                android:layout_height="@dimen/image_title_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icstatuspc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalWaiting"
+                style="@style/Widget.Title.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTitlePrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/imgWaiting"
+                app:layout_constraintStart_toEndOf="@id/imgWaiting"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Chờ phục vụ (15)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSeeAllWaitingCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_all"
+                style="@style/Widget.TextView.Border.WapContent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.ekingdom.common.view.DividerRecyclerView
+                android:id="@+id/rcvWaitingOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imgWaiting"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/dp12"
+                tools:listitem="@layout/rcv_item_waiting_services"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clTotalMoney"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_green"
-        android:clipToPadding="true"
-        android:layout_marginStart="4dp"
-        android:elevation="1dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/clPaymentRequest"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgTotalMoney"
-            android:layout_width="@dimen/image_title_recharge_size"
-            android:layout_height="@dimen/image_title_recharge_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_icpopuppayment" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTotalMoneyTitle"
-            style="@style/Widget.Title.TextView.Recharge"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/imgTotalMoney"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgTotalMoney"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/total_money" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTotalMoneyValue"
-            style="@style/Widget.TextView.Number.Large"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgTotalMoney"
-            android:text="20,000,000 " />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvMerchant"
-            style="@style/Widget.TextView.Recharge.Status"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTotalMoneyValue"
-            android:text="Hoà Hưng - Ca Sáng" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clWorkStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:elevation="1dp"
-        android:padding="8dp"
-        android:background="@drawable/myrect"
-        android:clipToPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/clPaymentRequest"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgWorkstation"
-            android:layout_width="@dimen/image_title_size"
-            android:layout_height="@dimen/image_title_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_icstatuspc" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTotaWorkstation"
-            style="@style/Widget.Title.TextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorTitlePrimary"
-            app:layout_constraintBottom_toBottomOf="@+id/imgWorkstation"
-            app:layout_constraintStart_toEndOf="@id/imgWorkstation"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Máy trạm (15)" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWatchAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/see_all"
-            style="@style/Widget.TextView.Border.WapContent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvWSStatus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/imgWorkstation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            android:layout_marginTop="@dimen/dp12"
-            tools:itemCount="4"
-            tools:listitem="@layout/rcv_item_ws_status"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clWaiting"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:elevation="1dp"
-        android:padding="8dp"
-        android:background="@drawable/myrect"
-        android:clipToPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/clWorkStatus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgWaiting"
-            android:layout_width="@dimen/image_title_size"
-            android:layout_height="@dimen/image_title_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_icstatuspc" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTotalWaiting"
-            style="@style/Widget.Title.TextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorTitlePrimary"
-            app:layout_constraintBottom_toBottomOf="@+id/imgWaiting"
-            app:layout_constraintStart_toEndOf="@id/imgWaiting"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Chờ phục vụ (15)" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvSeeAllWaitingCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/see_all"
-            style="@style/Widget.TextView.Border.WapContent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

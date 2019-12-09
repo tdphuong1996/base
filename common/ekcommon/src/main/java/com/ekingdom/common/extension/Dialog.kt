@@ -7,7 +7,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.ekingdom.common.view.EKMessageDialogFragment
 
-fun Context.getGenericDialog(titleResID: Int, message: Int): DialogFragment {
+fun Context.getGenericDialog(titleResID: Int, message: Int): EKMessageDialogFragment {
     return EKMessageDialogFragment.newInstance(titleResID, message)
 }
 

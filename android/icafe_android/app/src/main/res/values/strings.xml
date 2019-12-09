@@ -10,5 +10,21 @@
     <string name="total_money">Tổng tiền</string>
     <string name="workstation">Máy trạm</string>
     <string name="see_all">Xem tất cả</string>
+    <string name="login">Đăng nhập</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="login_hint">Chứa 4 ký tự trở lên (a-z, 0-9)</string>
+    <string name="password">Mật khẩu</string>
+    <string name="forget_pass_underline"><u>Quên mật khẩu</u></string>
+    <string name="forget_pass">Quên mật khẩu</string>
+    <string name="launcher">Launcher</string>
+    <string name="forget_pass_message">Nhập địa chỉ email được liên kết với tài khoản của bạn và chúng tôi sẽ gửi cho bạn thông tin mật khẩu mới qua email.</string>
+    <string name="send_request">Gửi yêu cầu</string>
+    <string name="email">Email</string>
+    <string name="back_to_login"><u>Trở về đăng nhập</u></string>
+    <string name="forget_pass_success_message">Bạn vừa gửi yêu cầu khôi phục mật khẩu thành công. Vui lòng kiểm tra email để lấy lại mật khẩu mới. Xin cảm ơn!</string>
+    <string name="OK">OK</string>
+    <string name="invalid_password">Mật khẩu không hợp lệ</string>
+    <string name="invalid_email">Email không hợp lệ</string>
+    <string name="invalid_username">Tên tài khoản không hợp lệ</string>
 
 </resources>

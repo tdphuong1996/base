@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTopMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.09"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTopMargin"
+            app:layout_constraintWidth_percent="0.2"
+            app:srcCompat="@drawable/logo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/login"
+            android:textAllCaps="true"
+            android:textColor="#000"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgIcon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            style="@style/Widget.TextView.Login.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp40"
+            android:text="@string/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtUserName"
+            style="@style/Widget.EditText.Login"
+            android:layout_width="match_parent"
+            android:hint="@string/login_hint"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgEndUserName"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="@dimen/dp14"
+            app:srcCompat="@drawable/ic_icinputname"
+            app:layout_constraintEnd_toEndOf="@id/edtUserName"
+            app:layout_constraintTop_toTopOf="@id/edtUserName"
+            app:layout_constraintBottom_toBottomOf="@id/edtUserName"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPassword"
+            style="@style/Widget.TextView.Login.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="@string/password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtUserName" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPassword"
+            style="@style/Widget.EditText.Login"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:hint="@string/login_hint"
+            app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgEndPassword"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="@dimen/dp14"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_icshowpass"
+            android:background="?attr/actionBarItemBackground"
+            app:layout_constraintEnd_toEndOf="@id/edtPassword"
+            app:layout_constraintTop_toTopOf="@id/edtPassword"
+            app:layout_constraintBottom_toBottomOf="@id/edtPassword"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvForgetPass"
+            style="@style/Widget.TextView.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:fontFamily="@font/montserrat_medium"
+            android:linksClickable="false"
+            android:selectAllOnFocus="false"
+            android:layout_marginTop="@dimen/dp8"
+            android:padding="@dimen/dp8"
+            android:paddingEnd="0dp"
+            android:text="@string/forget_pass_underline"
+            android:textColor="@color/lightColorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/edtPassword"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            style="@style/Widget.AppCompat.Button.FULL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp40"
+            android:background="@drawable/corner_solid_primary_5dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:text="@string/login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvForgetPass"
+            app:layout_constraintWidth_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

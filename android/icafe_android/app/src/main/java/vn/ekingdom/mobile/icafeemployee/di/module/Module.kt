@@ -5,9 +5,12 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import vn.ekingdom.mobile.icafeemployee.base.SharedReferenceHelper
 import vn.ekingdom.mobile.icafeemployee.ui.account.AccountViewModel
+import vn.ekingdom.mobile.icafeemployee.ui.account.forgotpass.ForgotPassViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.dashboard.DashBoardViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.history.HistoryViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.home.HomeViewModel
+import vn.ekingdom.mobile.icafeemployee.ui.launcher.LauncherViewModel
+import vn.ekingdom.mobile.icafeemployee.ui.account.login.LoginViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.notification.NotificationViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.search.SearchViewModel
 
@@ -33,6 +36,15 @@ val viewModelModule = module {
     }
     viewModel {
         AccountViewModel()
+    }
+    viewModel {
+        LoginViewModel()
+    }
+    viewModel {
+        LauncherViewModel()
+    }
+    viewModel {
+        ForgotPassViewModel()
     }
 
 }

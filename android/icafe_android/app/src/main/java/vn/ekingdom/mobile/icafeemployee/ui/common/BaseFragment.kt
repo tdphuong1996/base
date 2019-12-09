@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.CallSuper
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -57,6 +58,8 @@ abstract class BaseFragment<VM : BaseViewModel>() : Fragment(){
 
     abstract fun init()
     abstract fun initView(view: View)
+
+    @CallSuper
     open fun bindEvent(view: View) {
         viewModel.loadingState.observe(this, Observer { loadingState ->
             loadingState.let {

@@ -5,6 +5,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import vn.ekingdom.mobile.icafeemployee.MainActivity
 import vn.ekingdom.mobile.icafeemployee.R
 import vn.ekingdom.mobile.icafeemployee.ui.common.BaseFragment
 
@@ -18,6 +19,7 @@ class HomeFragment: BaseFragment<HomeViewModel>() {
     }
 
     override fun initView(view: View) {
+        (activity as? MainActivity)?.showToolbar(true)
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.fmNavChild) as NavHostFragment
         NavigationUI.setupWithNavController(

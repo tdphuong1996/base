@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun showToolbar(isShow: Boolean){
+        searchViewToolbar.visibility = if (isShow) View.VISIBLE else View.GONE
+    }
+
     override fun onSupportNavigateUp() : Boolean {
         if (searchViewToolbar.isSearchShowing()){
             searchViewToolbar.closeSearch()

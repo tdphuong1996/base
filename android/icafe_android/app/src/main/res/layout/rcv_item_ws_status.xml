@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/corner_line_5dp"
+    android:background="@drawable/corner_line_light_gray_5dp"
     android:layout_margin="@dimen/dp10"
     >
 
