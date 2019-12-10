@@ -5,7 +5,7 @@
     app:startDestination="@+id/forgotPassScreen"
     >
 
-    <fragment
+    <custom_fragment
         android:id="@+id/forgotPassScreen"
         android:label="@string/forget_pass"
         android:name="vn.ekingdom.mobile.icafeemployee.ui.account.forgotpass.ForgotPassFragment"

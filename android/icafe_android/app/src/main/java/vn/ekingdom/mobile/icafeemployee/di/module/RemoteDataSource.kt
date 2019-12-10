@@ -1,6 +1,6 @@
 package vn.ekingdom.mobile.icafeemployee.di.module
 
-import vn.ekingdom.mobile.icafeemployee.data.repository.api.DateTypeDeserializer
+import vn.ekingdom.mobile.icafeemployee.data.repository.error.DateTypeDeserializer
 import vn.ekingdom.mobile.icafeemployee.data.repository.error.NullOnEmptyConverterFactory
 import vn.ekingdom.mobile.icafeemployee.utils.BASE_URL
 import com.google.gson.FieldNamingPolicy
@@ -24,8 +24,12 @@ val retrofitModule = module {
             .serializeNulls()
             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
             .setDateFormat(DateFormat.LONG)
-            .registerTypeAdapter(Date::class.java, DateTypeDeserializer())
-            .registerTypeAdapter(Date::class.java, DateTypeDeserializer())
+            .registerTypeAdapter(Date::class.java,
+                DateTypeDeserializer()
+            )
+            .registerTypeAdapter(Date::class.java,
+                DateTypeDeserializer()
+            )
             .create()
     }
 

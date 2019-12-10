@@ -5,41 +5,18 @@
     android:id="@+id/nav_home"
     app:startDestination="@id/dashboardScreen">
 
-    <fragment
+    <custom_fragment
         android:id="@+id/dashboardScreen"
         android:name="vn.ekingdom.mobile.icafeemployee.ui.dashboard.DashBoardFragment"
         android:label="@string/dashboard"
         tools:layout="@layout/fragment_dashboard"
         />
 
-    <fragment
-        android:id="@+id/historyScreen"
-        android:name="vn.ekingdom.mobile.icafeemployee.ui.history.HistoryFragment"
-        android:label="@string/history"
-        tools:layout="@layout/fragment_history"
-        app:enterAnim="@anim/slide_in_left"
-        app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right"
-        />
 
-    <fragment
-        android:id="@+id/notificationScreen"
-        android:name="vn.ekingdom.mobile.icafeemployee.ui.notification.NofiticationFragment"
-        android:label="@string/notification"
-        tools:layout="@layout/fragment_notification"
-        app:enterAnim="@anim/slide_in_left"
-        app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right"
-        />
 
-    <fragment
-        android:id="@+id/userScreen"
-        android:name="vn.ekingdom.mobile.icafeemployee.ui.account.AccountFragment"
-        android:label="@string/account"
-        tools:layout="@layout/fragment_account"
-        app:enterAnim="@anim/slide_in_left"
-        app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right"
-        />
+<!--    <include app:graph="@navigation/nav_dashboard" />-->
+    <include app:graph="@navigation/nav_history" />
+    <include app:graph="@navigation/nav_notification" />
+    <include app:graph="@navigation/nav_account" />
 
 </navigation>

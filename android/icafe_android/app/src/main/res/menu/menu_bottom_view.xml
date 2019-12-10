@@ -6,17 +6,17 @@
         android:title="@string/dashboard" />
 
     <item
-        android:id="@+id/historyScreen"
+        android:id="@+id/nav_history"
         android:icon="@drawable/ic_ictabhistory"
         android:title="@string/history" />
 
     <item
-        android:id="@+id/notificationScreen"
+        android:id="@+id/nav_notification"
         android:icon="@drawable/ic_ictabnotification"
         android:title="@string/notification" />
 
     <item
-        android:id="@+id/userScreen"
+        android:id="@+id/nav_account"
         android:icon="@drawable/ic_ictabaccount"
         android:title="@string/account" />
 

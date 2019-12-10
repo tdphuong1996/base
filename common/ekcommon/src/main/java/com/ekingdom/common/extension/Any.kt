@@ -11,7 +11,7 @@ fun Any.getClassSimpleTag(): String = this.javaClass.simpleName
 inline fun Any.getMethodTag(): String =
     getClassTag() + "::" + object : Any() {}.javaClass.enclosingMethod?.name
 
-inline fun Any.getSessionID(): String {
+fun Any.getSessionID(): String {
     val AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     val rnd = SecureRandom()
     val len = 16

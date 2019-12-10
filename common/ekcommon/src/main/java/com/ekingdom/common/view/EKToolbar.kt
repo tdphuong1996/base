@@ -5,7 +5,10 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.ViewCompat
+import androidx.core.view.updateLayoutParams
 import com.ekingdom.ekcommon.R
 import kotlinx.android.synthetic.main.base_toolbar_item.view.*
 
@@ -46,6 +49,10 @@ class EKToolbar (context: Context?, attrs: AttributeSet?) : ConstraintLayout(con
 
     private fun init() {
         tag = "Toolbar"
+        ViewCompat.setOnApplyWindowInsetsListener(this) { view, insets ->
+            view.setPaddingTop(insets.systemWindowInsetTop)
+            insets
+        }
         View.inflate(context, R.layout.base_toolbar_item, this)
         clBack.setOnClickListener { v ->
             if (onToolbarActionClickListener != null) onToolbarActionClickListener?.onClickBack(v)
@@ -73,6 +80,15 @@ class EKToolbar (context: Context?, attrs: AttributeSet?) : ConstraintLayout(con
 
     fun setOnToolbarActionClickListener(onToolbarActionClickListener: OnToolbarActionClickListener?) {
         this.onToolbarActionClickListener = onToolbarActionClickListener
+    }
+
+    private fun View.setPaddingTop(value: Int) = updateLayoutParams<ViewGroup.MarginLayoutParams> {
+        setPadding(paddingLeft, value, paddingRight, paddingBottom)
+        height = pxFromDp(56f) + value
+    }
+
+    private fun pxFromDp(dp: Float): Int {
+        return (dp * resources.displayMetrics.density).toInt()
     }
 
     fun getImageAction() = imgAction

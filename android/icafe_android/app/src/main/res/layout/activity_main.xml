@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorBackground"
-            class="androidx.navigation.fragment.NavHostFragment"
+            class="vn.ekingdom.mobile.icafeemployee.base.MyNavHostFragment"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_main"
             />

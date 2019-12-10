@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_account">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_account"
+    app:startDestination="@id/userScreen"
+    >
+
+    <custom_fragment
+        android:id="@+id/userScreen"
+        android:name="vn.ekingdom.mobile.icafeemployee.ui.account.AccountFragment"
+        android:label="@string/account"
+        app:enterAnim="@anim/slide_in_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        />
+
+    <custom_fragment
+        android:id="@+id/resetPassScreen"
+        android:name="vn.ekingdom.mobile.icafeemployee.ui.account.resetpass.ResetPasswordFragment"
+        android:label="@string/reset_pass"
+        />
 
 </navigation>

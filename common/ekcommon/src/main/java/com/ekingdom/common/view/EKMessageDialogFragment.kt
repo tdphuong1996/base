@@ -1,6 +1,7 @@
 package com.ekingdom.common.view
 
 import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
@@ -27,7 +28,9 @@ class EKMessageDialogFragment : DialogFragment() {
         var dialog = AlertDialog.Builder(requireContext())
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton("OK", null)
+            .setPositiveButton("OK") { _, _ ->
+                clickCallback?.invoke(true)
+            }
             .create()
         return dialog
     }

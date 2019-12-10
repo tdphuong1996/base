@@ -75,9 +75,17 @@
             android:id="@+id/edtUserName"
             style="@style/Widget.EditText.Login"
             android:layout_width="match_parent"
-            android:drawableEnd="@drawable/ic_icinputname"
             android:hint="@string/login_hint"
             app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgEndUserName"
+            style="@style/Image_End_EditText"
+            app:srcCompat="@drawable/ic_icinputname"
+            app:layout_constraintEnd_toEndOf="@id/edtUserName"
+            app:layout_constraintTop_toTopOf="@id/edtUserName"
+            app:layout_constraintBottom_toBottomOf="@id/edtUserName"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvEmail"
@@ -93,9 +101,17 @@
             android:id="@+id/edtEmail"
             style="@style/Widget.EditText.Login"
             android:layout_width="match_parent"
-            android:drawableEnd="@drawable/ic_icinputemail"
             android:hint="@string/login_hint"
             app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgEndEmail"
+            style="@style/Image_End_EditText"
+            app:srcCompat="@drawable/ic_icinputemail"
+            app:layout_constraintEnd_toEndOf="@id/edtEmail"
+            app:layout_constraintTop_toTopOf="@id/edtEmail"
+            app:layout_constraintBottom_toBottomOf="@id/edtEmail"
+            />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -133,7 +149,7 @@
             android:id="@+id/groupForgotPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tvUserName,edtUserName,tvEmail,edtEmail,tvBackToLogin"
+            app:constraint_referenced_ids="tvUserName,edtUserName,tvEmail,edtEmail,tvBackToLogin,imgEndUserName,imgEndEmail"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

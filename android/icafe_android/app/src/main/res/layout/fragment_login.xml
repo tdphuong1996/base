@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -27,6 +28,7 @@
             android:id="@+id/imgIcon"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:transitionName="image_transition_0"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,14 +65,15 @@
             android:id="@+id/edtUserName"
             style="@style/Widget.EditText.Login"
             android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:imeOptions="actionNext"
             android:hint="@string/login_hint"
-            app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+            app:layout_constraintTop_toBottomOf="@id/tvUserName"
+            tools:layout_editor_absoluteX="30dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgEndUserName"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="@dimen/dp14"
+            style="@style/Image_End_EditText"
             app:srcCompat="@drawable/ic_icinputname"
             app:layout_constraintEnd_toEndOf="@id/edtUserName"
             app:layout_constraintTop_toTopOf="@id/edtUserName"
@@ -92,14 +95,13 @@
             style="@style/Widget.EditText.Login"
             android:layout_width="match_parent"
             android:inputType="textPassword"
+            android:imeOptions="actionDone"
             android:hint="@string/login_hint"
             app:layout_constraintTop_toBottomOf="@id/tvPassword" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgEndPassword"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="@dimen/dp14"
+            style="@style/Image_End_EditText"
             android:clickable="true"
             app:srcCompat="@drawable/ic_icshowpass"
             android:background="?attr/actionBarItemBackground"
@@ -132,7 +134,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp40"
             android:background="@drawable/corner_solid_primary_5dp"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

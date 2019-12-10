@@ -1,4 +1,6 @@
 package vn.ekingdom.mobile.icafeemployee.ui.wslist
 
-class WSListViewModel {
+import vn.ekingdom.mobile.icafeemployee.base.BaseViewModel
+
+class WSListViewModel: BaseViewModel() {
 }

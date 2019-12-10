@@ -12,9 +12,10 @@ data class UserModel(
     var phoneNumber: String = "Unknown",
     var nickName: String = "Unknown",
     var avatar: String = "Unknown",
-    var birthday: String,
+    var birthday: String = "Unknown",
     var gender: Int = 0,
     var provinceId: String = "Unknown",
     var distristId: String = "Unknown",
     var address: String = "Unknown"
-)
+) {
+}

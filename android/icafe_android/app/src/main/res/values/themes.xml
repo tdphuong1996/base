@@ -10,7 +10,7 @@
     </style>
 
     <style name="Widget.Toolbar" parent="ToolBarStyle">
-        <item name="android:background">?attr/toolbarBackgroundColor</item>
+        <item name="android:background">@color/lightColorPrimary</item>
     </style>
 
     <!--<editor-fold desc="Toolbar style">-->
@@ -30,6 +30,13 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@style/TextAppearance.AppCompat.Widget.ActionBar.Title</item>
     </style>
+
+
+    <style name="EKToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/lightColorPrimary</item>
+    </style>
     <!--</editor-fold>-->
 
     <style name="Widget.AppCompat.Button.FULL" parent="Widget.AppCompat.Button">
@@ -37,6 +44,7 @@
         <item name="android:textColor">#fff</item>
         <item name="android:textSize">@dimen/sp14</item>
         <item name="android:lineHeight">@dimen/sp18</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
     </style>
 
     <!--<editor-fold desc="Text view style">-->
@@ -109,25 +117,37 @@
     </style>
 
 
+    <!--<editor-fold desc="Login style">-->
     <style name="Widget.TextView.Login.Title" parent="Widget.TextView.Normal">
         <item name="android:textSize">@dimen/sp12</item>
         <item name="android:layout_marginStart">@dimen/dp30</item>
     </style>
 
-    <style name="Widget.EditText.Login" parent="Widget.AppCompat.EditText">
-        <item name="android:layout_height">@dimen/dp50</item>
+    <style name="Widget.EditText.Base.Single" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColorHint">@color/textHintColor</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Widget.EditText.Login" parent="Widget.EditText.Base.Single">
+        <item name="android:layout_height">@dimen/dp50</item>
         <item name="android:layout_marginStart">@dimen/dp30</item>
         <item name="android:layout_marginEnd">@dimen/dp30</item>
         <item name="android:layout_marginTop">@dimen/dp8</item>
         <item name="android:background">@drawable/corner_edittext_5dp</item>
-        <item name="android:textColorHint">@color/textHintColor</item>
         <item name="android:paddingStart">@dimen/dp10</item>
-        <item name="android:paddingEnd">@dimen/dp10</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:maxLines">1</item>
+        <item name="android:paddingEnd">@dimen/dp48</item>
         <item name="android:drawablePadding">@dimen/dp8</item>
     </style>
+
+    <style name="Image_End_EditText">
+        <item name="android:layout_width">@dimen/dp48</item>
+        <item name="android:layout_height">@dimen/dp48</item>
+        <item name="android:padding">@dimen/dp14</item>
+    </style>
+
+    <!--</editor-fold>-->
 
 </resources>

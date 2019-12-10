@@ -26,5 +26,20 @@
     <string name="invalid_password">Mật khẩu không hợp lệ</string>
     <string name="invalid_email">Email không hợp lệ</string>
     <string name="invalid_username">Tên tài khoản không hợp lệ</string>
+    <string name="current_password">Mật khẩu hiện tại</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="re_enter_new_pass">Nhập lại mật khẩu mới</string>
+    <string name="change_pass">Đổi mật khẩu</string>
+    <string name="reset_pass">Đổi mật khẩu</string>
+    <string name="invalid_current_password">Mật khẩu cũ không hợp lệ</string>
+    <string name="invalid_new_password">Mật khẩu mới không hợp lệ</string>
+    <string name="invalid_current_and_new_pass">Mật khẩu mới không được trùng mật khẩu cũ</string>
+    <string name="invalid_new_and_confirm_pass">Mật khẩu nhập lại không khớp</string>
+    <string name="ws_ready">Sẵn sàng</string>
+    <string name="ws_used">Đang sử dụng</string>
+    <string name="ws_maintenance">Đang bảo trì</string>
+    <string name="ws_error">Mất kết nối</string>
+    <string name="search_computer_hint">Nhập tên máy,...</string>
+    <string name="list_ws">Danh sách máy trạm</string>
 
 </resources>

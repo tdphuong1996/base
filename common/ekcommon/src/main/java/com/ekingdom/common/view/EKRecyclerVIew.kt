@@ -23,6 +23,10 @@ class EKRecyclerVIew(context: Context?, attrs: AttributeSet?) : ConstraintLayout
 
     fun getRcvData() = rcvData
 
+    fun removeDivider() {
+        rcvData.removeItemDecoration(rcvData.dividerItemDecoration!!)
+    }
+
     fun noData(boolean: Boolean) {
         vNodata.visibility = if (boolean) View.VISIBLE else View.GONE
         rcvData.visibility = if (boolean) View.GONE else View.VISIBLE

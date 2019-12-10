@@ -30,7 +30,6 @@ class SearchViewToolbar(context: Context?, attrs: AttributeSet?) : RelativeLayou
         imgClose.setOnClickListener { closeSearch() }
         imgBackSearch.setOnClickListener { closeSearch() }
         ekToolbar.getImageBack().setImageResource(R.drawable.ic_icscanqr)
-        setTitle("Dashboard")
 
         ViewCompat.setOnApplyWindowInsetsListener(ekToolbar) { view, insets ->
             (ekToolbar as View).setPaddingTop(insets.systemWindowInsetTop)
@@ -64,7 +63,8 @@ class SearchViewToolbar(context: Context?, attrs: AttributeSet?) : RelativeLayou
                 isAnimationRunning = false
             }
         })
-        circularReveal.start()
+        if (!isAnimationRunning)
+            circularReveal.start()
     }
 
     fun closeSearch() {
@@ -92,7 +92,8 @@ class SearchViewToolbar(context: Context?, attrs: AttributeSet?) : RelativeLayou
                 isAnimationRunning = false
             }
         })
-        circularConceal.start()
+        if (!isAnimationRunning)
+            circularConceal.start()
     }
 
     fun setTitle(title: String) {

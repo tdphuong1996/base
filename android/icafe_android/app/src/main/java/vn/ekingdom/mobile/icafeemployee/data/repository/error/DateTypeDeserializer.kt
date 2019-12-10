@@ -1,4 +1,4 @@
-package vn.ekingdom.mobile.icafeemployee.data.repository.api
+package vn.ekingdom.mobile.icafeemployee.data.repository.error
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer

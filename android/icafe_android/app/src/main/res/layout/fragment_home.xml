@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/colorBackground"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:name="vn.ekingdom.mobile.icafeemployee.base.MyNavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_home"
         />

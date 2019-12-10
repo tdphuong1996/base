@@ -22,7 +22,7 @@
             android:layout_marginBottom="4dp"
             android:layout_marginEnd="4dp"
             android:padding="8dp"
-            android:elevation="1dp"
+            android:elevation="2dp"
             android:background="@drawable/gradient_blue"
             android:clipToPadding="true"
             app:layout_constraintEnd_toStartOf="@+id/clTotalMoney"
@@ -109,7 +109,7 @@
             android:background="@drawable/gradient_green"
             android:clipToPadding="true"
             android:layout_marginStart="4dp"
-            android:elevation="1dp"
+            android:elevation="2dp"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -161,9 +161,10 @@
             android:id="@+id/clWorkStatus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:elevation="1dp"
+            android:layout_marginTop="@dimen/dp20"
+            android:elevation="2dp"
             android:padding="8dp"
+            android:paddingBottom="0dp"
             android:background="@drawable/myrect"
             android:clipToPadding="true"
             app:layout_constraintTop_toBottomOf="@id/clPaymentRequest"
@@ -200,18 +201,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvWSStatus"
+            <com.ekingdom.common.view.EKRecyclerVIew
+                android:id="@+id/ekWSStatus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/imgWorkstation"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="@dimen/dp12"
-                tools:itemCount="4"
-                tools:listitem="@layout/rcv_item_ws_status"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -220,9 +218,10 @@
             android:id="@+id/clWaiting"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:elevation="1dp"
+            android:layout_marginTop="@dimen/dp20"
+            android:elevation="2dp"
             android:padding="8dp"
+            android:paddingBottom="0dp"
             android:background="@drawable/myrect"
             android:clipToPadding="true"
             app:layout_constraintTop_toBottomOf="@id/clWorkStatus"
@@ -259,15 +258,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
-            <com.ekingdom.common.view.DividerRecyclerView
-                android:id="@+id/rcvWaitingOrder"
+            <com.ekingdom.common.view.EKRecyclerVIew
+                android:id="@+id/ekWaitingOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/imgWaiting"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/dp12"
-                tools:listitem="@layout/rcv_item_waiting_services"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

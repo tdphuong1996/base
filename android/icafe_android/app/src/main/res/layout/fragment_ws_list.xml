@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+<!--    <com.ekingdom.common.view.EKToolbar-->
+<!--        android:id="@+id/ekToolbar"-->
+<!--        style="@style/EKToolbarStyle"-->
+<!--        app:title="@string/list_ws"-->
+<!--        />-->
+
+    <vn.ekingdom.mobile.icafeemployee.ui.common.EKSearchBar
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/rllItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalWS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Có 55 máy trạm"
+            android:padding="8dp"
+            style="@style/Widget.TextView.Normal"/>
+
+        <com.ekingdom.common.view.EKRecyclerVIew
+            android:id="@+id/ekWSList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvTotalWS"
+            />
+
+    </RelativeLayout>
 
 </LinearLayout>

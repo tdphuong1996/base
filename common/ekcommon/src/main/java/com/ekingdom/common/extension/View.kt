@@ -5,10 +5,12 @@ import android.graphics.Color
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.github.ybq.android.spinkit.sprite.Sprite
 import com.github.ybq.android.spinkit.style.ThreeBounce
 
@@ -64,4 +66,8 @@ fun View?.hideKeyboard () {
     }
     imm.hideSoftInputFromWindow(windowToken, 0)
     clearFocus()
+}
+
+fun View?.forcusAndShowKeyboard(activity: AppCompatActivity?) {
+    activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
 }

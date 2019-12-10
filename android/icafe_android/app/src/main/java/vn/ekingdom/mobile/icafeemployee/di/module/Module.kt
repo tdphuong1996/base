@@ -11,8 +11,10 @@ import vn.ekingdom.mobile.icafeemployee.ui.history.HistoryViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.home.HomeViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.launcher.LauncherViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.account.login.LoginViewModel
+import vn.ekingdom.mobile.icafeemployee.ui.account.resetpass.ResetPasswordViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.notification.NotificationViewModel
 import vn.ekingdom.mobile.icafeemployee.ui.search.SearchViewModel
+import vn.ekingdom.mobile.icafeemployee.ui.wslist.WSListViewModel
 
 val appData = module {
     single { SharedReferenceHelper(androidContext()) }
@@ -45,6 +47,12 @@ val viewModelModule = module {
     }
     viewModel {
         ForgotPassViewModel()
+    }
+    viewModel {
+        ResetPasswordViewModel()
+    }
+    viewModel {
+        WSListViewModel()
     }
 
 }

@@ -4,21 +4,22 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.search_view_layout.*
-import vn.ekingdom.mobile.icafeemployee.base.MyNavHostFragment
-import vn.ekingdom.mobile.icafeemployee.ui.home.HomeFragment
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var navController: NavController
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        window.sharedElementEnterTransition.duration = 2000
+        window.sharedElementReturnTransition.setDuration(2000).interpolator =
+            DecelerateInterpolator()
         rootLayout.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_STABLE or
                 SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
@@ -32,8 +33,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun getToolbar() = searchViewToolbar
+
     fun showToolbar(isShow: Boolean){
         searchViewToolbar.visibility = if (isShow) View.VISIBLE else View.GONE
+    }
+
+    fun setToolbarTitle(title: String) {
+        searchViewToolbar.setTitle(title)
     }
 
     override fun onSupportNavigateUp() : Boolean {

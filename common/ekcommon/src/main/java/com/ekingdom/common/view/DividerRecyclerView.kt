@@ -10,7 +10,7 @@ import com.ekingdom.ekcommon.R
 
 class DividerRecyclerView : RecyclerView {
 
-    private var dividerItemDecoration: DividerItemDecorator? = null
+    public var dividerItemDecoration: DividerItemDecorator? = null
     private var iRecyclerViewLoadMoreListener: IRecyclerViewLoadMoreListener? = null
 //    private val iRecyclerViewScrollListener: IRecyclerViewScrollListener? = null
     private var isLoadMore = true
