@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':common'
 include ':ekcommon'
 project(':ekcommon').projectDir = new File('/Users/khieunguyen/Desktop/project/icafe_mobile/common/ekcommon')
 rootProject.name='Icafe Employee'
