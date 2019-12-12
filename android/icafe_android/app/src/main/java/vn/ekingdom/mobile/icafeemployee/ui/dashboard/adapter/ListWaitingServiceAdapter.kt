@@ -8,11 +8,14 @@ import com.ekingdom.common.base.BaseAdapter
 import com.ekingdom.common.base.BaseViewHolder
 import com.ekingdom.common.extension.toString
 import kotlinx.android.synthetic.main.rcv_item_waiting_services.view.*
+import vn.ekingdom.mobile.icafeemployee.R
 import vn.ekingdom.mobile.icafeemployee.model.Order
 import java.util.*
 
-class ListWaitingServiceAdapter: BaseAdapter<Order, ListWaitingServicesViewHolder> {
-    constructor(layoutRes: Int, _arrData: MutableList<Order>) : super(layoutRes, _arrData)
+class ListWaitingServiceAdapter(_arrData: MutableList<Order?>) :
+    BaseAdapter<Order, ListWaitingServicesViewHolder>(_arrData) {
+    override val layoutRes: Int
+        get() = R.layout.rcv_item_waiting_services
 
     override fun getViewHolder(viewType: Int, parent: ViewGroup): ListWaitingServicesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(layoutRes, parent, false)

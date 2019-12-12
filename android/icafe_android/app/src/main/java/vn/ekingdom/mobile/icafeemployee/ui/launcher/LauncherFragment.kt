@@ -24,25 +24,7 @@ class LauncherFragment: BaseFragment<LauncherViewModel>() {
     }
 
     override fun initView(view: View) {
-        Handler().postDelayed({
-            val extras = FragmentNavigatorExtras(
-                view.imgIcon to "image_transition_0"
-            )
-            val destination = if (EmployeeApplication.userModel == null) {
-                R.id.action_login
-            } else {
-                R.id.action_home
-            }
 
-            findNavController().navigate(
-                destination,
-                null,
-                NavOptions.Builder().setPopUpTo(
-                    R.id.launcherScreen,
-                    true
-                ).build(),
-                extras)
-        }, 500)
 
     }
 

@@ -160,7 +160,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clWorkStatus"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/dp20"
             android:elevation="2dp"
             android:padding="8dp"
@@ -204,7 +204,7 @@
             <com.ekingdom.common.view.EKRecyclerVIew
                 android:id="@+id/ekWSStatus"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 app:layout_constraintTop_toBottomOf="@id/imgWorkstation"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -221,6 +221,7 @@
             android:layout_marginTop="@dimen/dp20"
             android:elevation="2dp"
             android:padding="8dp"
+            android:visibility="gone"
             android:paddingBottom="0dp"
             android:background="@drawable/myrect"
             android:clipToPadding="true"

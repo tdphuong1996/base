@@ -8,29 +8,36 @@ import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import com.ekingdom.common.base.BaseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import vn.ekingdom.mobile.icafeemployee.ui.account.login.LoginFragment
+import vn.ekingdom.mobile.icafeemployee.ui.common.BaseActivity
+import vn.ekingdom.mobile.icafeemployee.ui.dashboard.DashBoardFragment
 
 
-class MainActivity : AppCompatActivity() {
-    lateinit var navController: NavController
+class MainActivity(override val layoutRes: Int=R.layout.activity_main) : BaseActivity() {
+
+    override fun init() {
+    }
+
+    override fun initView() {
+    }
+
+    override fun bindEvent() {
+    }
+
+    override fun getData() {
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         window.sharedElementEnterTransition.duration = 2000
         window.sharedElementReturnTransition.setDuration(2000).interpolator =
             DecelerateInterpolator()
         rootLayout.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_STABLE or
                 SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        navController = findNavController(R.id.fmContainer)
-        searchViewToolbar.iSearchShow = {
-            if (it) {
-                navController.navigate(R.id.action_home_to_search)
-            } else {
-                navController.popBackStack()
-            }
-        }
+        replaceFragment(DashBoardFragment.newInstance(),false)
     }
 
     fun getToolbar() = searchViewToolbar
@@ -41,22 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setToolbarTitle(title: String) {
         searchViewToolbar.setTitle(title)
-    }
-
-    override fun onSupportNavigateUp() : Boolean {
-        if (searchViewToolbar.isSearchShowing()){
-            searchViewToolbar.closeSearch()
-            return false
-        }
-        return navController.navigateUp()
-    }
-
-    override fun onBackPressed() {
-        if (searchViewToolbar.isSearchShowing()){
-            searchViewToolbar.closeSearch()
-        } else {
-            super.onBackPressed()
-        }
     }
 
 }

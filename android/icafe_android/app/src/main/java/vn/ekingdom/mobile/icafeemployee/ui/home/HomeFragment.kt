@@ -1,8 +1,10 @@
 package vn.ekingdom.mobile.icafeemployee.ui.home
 
+import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import vn.ekingdom.mobile.icafeemployee.MainActivity
@@ -15,22 +17,27 @@ class HomeFragment: BaseFragment<HomeViewModel>() {
         get() = R.layout.fragment_home
     override val viewModel by viewModel<HomeViewModel>()
 
+    companion object{
+        fun newInstance(): HomeFragment {
+            val args = Bundle()
+            val fragment = HomeFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+
     override fun init() {
+
     }
 
     override fun initView(view: View) {
         (activity as? MainActivity)?.showToolbar(true)
-        val navHostFragment =
-            childFragmentManager.findFragmentById(R.id.fmNavChild) as NavHostFragment
-        NavigationUI.setupWithNavController(
-            view.bottomNav,
-            navHostFragment.navController
-        )
 
-        view.bottomNav.getOrCreateBadge(R.id.dashboardScreen).apply {
-            backgroundColor = resources.getColor(R.color.lightColorPrimary)
-
-        }
+//        view.bottomNav.getOrCreateBadge(R.id.dashboardScreen).apply {
+//            backgroundColor = resources.getColor(R.color.lightColorPrimary)
+//
+//        }
     }
 
     override fun getData() {

@@ -2,7 +2,6 @@ package vn.ekingdom.mobile.icafeemployee.ui.account.forgotpass
 
 import android.annotation.SuppressLint
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import com.ekingdom.common.extension.*
 import com.jakewharton.rxbinding3.widget.textChanges
 import io.reactivex.Observable
@@ -54,7 +53,6 @@ class ForgotPassFragment: BaseFragment<ForgotPassViewModel>() {
     }
 
     private fun gotoLoginScreen() {
-        findNavController().popBackStack(R.id.loginScreen, false)
     }
 
     /**

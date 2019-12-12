@@ -79,6 +79,6 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
 
-    implementation project(path: ':common')
+    implementation project(path: ':pcommon')
 }
 apply plugin: "androidx.navigation.safeargs.kotlin"

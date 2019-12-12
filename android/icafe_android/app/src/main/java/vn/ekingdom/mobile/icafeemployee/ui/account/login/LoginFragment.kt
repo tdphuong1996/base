@@ -5,11 +5,8 @@ import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
-import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
 import com.ekingdom.common.extension.*
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -18,12 +15,25 @@ import kotlinx.android.synthetic.main.fragment_login.view.*
 import vn.ekingdom.mobile.icafeemployee.R
 import vn.ekingdom.mobile.icafeemployee.model.UserModel
 import vn.ekingdom.mobile.icafeemployee.ui.common.BaseFragment
+import vn.ekingdom.mobile.icafeemployee.ui.dashboard.DashBoardFragment
+import vn.ekingdom.mobile.icafeemployee.ui.home.HomeFragment
 
 @SuppressLint("CheckResult")
 class LoginFragment : BaseFragment<LoginViewModel>(){
+
+    companion object{
+        fun newInstance(): LoginFragment {
+            val args = Bundle()
+            val fragment = LoginFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
     override val layoutResID: Int
         get() = R.layout.fragment_login
     override val viewModel by activityViewModels<LoginViewModel>()
+
+
 
     private lateinit var userNameChange: Observable<CharSequence>
     private lateinit var passwordChange: Observable<CharSequence>
@@ -66,7 +76,6 @@ class LoginFragment : BaseFragment<LoginViewModel>(){
         }
 
         view.tvForgetPass.setOnClickListener {
-            findNavController().navigate(R.id.action_login_to_forgot_pass)
         }
 
         view.imgEndPassword.setOnClickListener {
@@ -86,7 +95,7 @@ class LoginFragment : BaseFragment<LoginViewModel>(){
                 password = view?.edtPassword?.text.toString()
             }
             sharedReferenceHelper.setUserLogin(userLogin)
-            findNavController().navigate(R.id.action_loginScreen_to_homeScreen)
+            replaceFragment(DashBoardFragment.newInstance(),false)
         }
     }
 

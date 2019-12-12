@@ -10,8 +10,10 @@ import vn.ekingdom.mobile.icafeemployee.R
 import vn.ekingdom.mobile.icafeemployee.model.WSStatus
 import vn.ekingdom.mobile.icafeemployee.model.WorkStationModel
 
-class ListWorkStationsAdapter(layoutRes: Int, _arrData: MutableList<WorkStationModel>) :
-    BaseAdapter<WorkStationModel, ListWorkStationsViewHolder>(layoutRes, _arrData) {
+class ListWorkStationsAdapter( _arrData: MutableList<WorkStationModel?>) :
+    BaseAdapter<WorkStationModel, ListWorkStationsViewHolder>( _arrData) {
+    override val layoutRes: Int
+        get() = R.layout.rcv_item_ws_status
     var clickAction: ((WorkStationModel?, Int) -> Unit)? = null
 
     override fun getViewHolder(viewType: Int, parent: ViewGroup): ListWorkStationsViewHolder {

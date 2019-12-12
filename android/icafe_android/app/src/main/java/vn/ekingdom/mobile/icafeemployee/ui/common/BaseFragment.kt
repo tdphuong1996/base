@@ -26,8 +26,6 @@ import vn.ekingdom.mobile.icafeemployee.base.SharedReferenceHelper
 abstract class BaseFragment<VM : BaseViewModel>() : Fragment(){
     protected abstract val layoutResID: Int
     protected abstract val viewModel: VM
-    protected val navController: NavController
-        get() = findNavController()
     val sharedReferenceHelper: SharedReferenceHelper by inject()
     private var isInit = false
 
@@ -103,4 +101,18 @@ abstract class BaseFragment<VM : BaseViewModel>() : Fragment(){
     override fun onDestroy() {
         super.onDestroy()
     }
+
+
+    fun addFragment(fragment: Fragment, isAddToBackStack: Boolean) {
+        if (activity is BaseActivity) {
+            (activity as BaseActivity).addFragment(fragment, isAddToBackStack)
+        }
+    }
+
+    fun replaceFragment(fragment: Fragment, isAddToBackStack: Boolean) {
+        if (activity is BaseActivity) {
+            (activity as BaseActivity).replaceFragment(fragment, isAddToBackStack)
+        }
+    }
+
 }
